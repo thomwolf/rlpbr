@@ -1,7 +1,7 @@
 add_executable(preprocess
     preprocess.cpp
 )
-target_link_libraries(preprocess rlpbr_preprocess)
+target_link_libraries(preprocess rlpbr_preprocess glm)
 
 add_executable(singlebench
     singlebench.cpp
@@ -17,7 +17,7 @@ if (OpenImageIO_FOUND)
         save_frame.cpp
         oiio_bridge.hpp oiio_bridge.cpp
     )
-    target_link_libraries(save_frame rlpbr OpenImageIO OpenImageIO_Util)
+    target_link_libraries(save_frame rlpbr OpenImageIO::OpenImageIO_Util OpenImageIO::OpenImageIO)
 endif()
 
 add_executable(make_sequence

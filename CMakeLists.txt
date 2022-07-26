@@ -34,7 +34,7 @@ if (NOT USE_BUNDLED)
 endif()
 
 # FIXME
-find_package(glfw3 3.3 QUIET)
+find_package(glfw3 3.3 REQUIRED QUIET)
 find_package(ZLIB QUIET)
 pkg_check_modules(gtk3 QUIET IMPORTED_TARGET gtk+-3.0)
 if (${CMAKE_SYSTEM_NAME} STREQUAL "Linux" AND gtk3_FOUND)

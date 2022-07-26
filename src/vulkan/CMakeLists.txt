@@ -81,6 +81,6 @@ target_include_directories(rlpbr_vulkan
 target_link_libraries(rlpbr_vulkan
     rlpbr_core CUDA::cudart
     glslang spirv_reflect SPIRV glslang-default-resource-limits
-    stb glfw OpenImageDenoise)
+    stb OpenImageDenoise glfw)
 
 add_dependencies(rlpbr_vulkan generate_vk_dispatch)
