@@ -60,3 +60,5 @@ if (ENABLE_EDITOR)
 endif()
 
 add_subdirectory(oidn EXCLUDE_FROM_ALL)
+
+add_subdirectory(glfw EXCLUDE_FROM_ALL)

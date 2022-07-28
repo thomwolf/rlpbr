@@ -176,7 +176,7 @@ int main(int argc, char *argv[]) {
         res = cudaGraphicsGLRegisterImage(&dst_imgs[i], render_textures[i],
             GL_TEXTURE_2D, cudaGraphicsMapFlagsWriteDiscard);
         if (res != cudaSuccess) {
-            cerr << "Failed to map texture into CUDA" << endl;
+            cerr << "Failed to map texture into CUDA: " << cudaGetErrorString(res) << endl;
             abort();
         }
 

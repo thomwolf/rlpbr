@@ -64,6 +64,25 @@ make
 
 Tools and examples will be built in `rlpbr/build/bin/`
 
+Thom machine setup
+------------------
+
+On a MSI laptop with ubuntu 20.4 dual boot (Vulkan doesn't work on WSL under windows currently)
+Hardware config: Intel Core i7 + GPU GeForce RTX 2060 mobile
+
+Building:
+
+- Setup NVIDIA CUDA (11.7 with recent drivers 515) + setup paths to cuda
+- Get the latest Vulkan SDK (1.3) + setup paths
+- get ISPC + setup PATHs
+- clone recursively git clone –recursive http://github.com/thomwolf/rlpbr
+- to match vulkan 1.3 in gslang external, update glslang to current master: cd rlpbr/external/glslang + git checkout master
+- install tbb: sudo apt-get install libtbb-dev
+- (to sove issues with installing glfw, I added it as an external and in cmakelists, need to do sudo apt install xorg-dev)
+- to solve issues with installing OpenImageIO, I installed it with vcpkg and updated the path in cmakelists: install vcpkg, install OpenImageIO with it and add vcpkg as toolchain in cmake
+- to compile the fly example: install glew (with vcpkg for instance) and glu (sudo apt-get install libglu1-mesa-dev)
+- to run the fly example: if error with device add __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia before the executable
+
 Scene Preprocessing
 -------------------
 

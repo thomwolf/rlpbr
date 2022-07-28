@@ -33,10 +33,11 @@ target_link_libraries(make_sequence rlpbr stb)
 
 find_package(GLEW QUIET)
 
-if (glfw3_FOUND AND GLEW_FOUND)
+if (GLEW_FOUND)
+    message(STATUS "Building fly")
     add_executable(fly
         fly.cpp
     )
 
-    target_link_libraries(fly rlpbr glfw GLEW GL)
+    target_link_libraries(fly rlpbr glfw GLEW::GLEW GL)
 endif()
